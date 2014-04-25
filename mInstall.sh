@@ -2,7 +2,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="vimrc vim"
+files="vimrc vim bash_aliases"
 
 #### Backup old dotfiles
 
