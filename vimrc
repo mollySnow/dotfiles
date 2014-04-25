@@ -28,7 +28,6 @@ let g:ycm_use_ultisnips_completer=1
 
 Plugin 'nanotech/jellybeans.vim'
 colorscheme jellybeans
-syntax enable
 
 filetype plugin indent on
 
