@@ -15,7 +15,7 @@ Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
-
+syntax on
 
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -23,7 +23,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ycm_use_ultisnips_completer=1
 
 colorscheme jellybeans
-
 
 
 set t_Co=256
@@ -43,7 +42,5 @@ set incsearch
 set ruler
 
 inoremap jj <Esc>
-
-filetype off
 
 let mapleader = ","
