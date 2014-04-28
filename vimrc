@@ -1,35 +1,29 @@
 set nocompatible
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-"Plugin handler"
 Plugin 'gmarik/vundle'
-"Navigation plugin"
 Plugin 'Shougo/unite.vim'
-"Surround plugin"
 Plugin 'tpope/vim-surround'
-"AutoComplete plugin"
 Plugin 'Valloric/YouCompleteMe'
-"cpp Header Source swapper"
 Plugin 'vim-scripts/a.vim'
-"Syntax Checker"
 Plugin 'scrooloose/syntastic'
-"Commenting plugin"
 Plugin 'scrooloose/nerdcommenter'
-"UltiSnip Engine"
 Plugin 'SirVer/ultisnips'
-"UltiSnip Default Snippets"
 Plugin 'honza/vim-snippets'
-"UltiSnip keyConfig"
+Plugin 'nanotech/jellybeans.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ycm_use_ultisnips_completer=1
 
-Plugin 'nanotech/jellybeans.vim'
 colorscheme jellybeans
 
-filetype plugin indent on
 
 
 set t_Co=256
