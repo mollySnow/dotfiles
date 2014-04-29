@@ -12,6 +12,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()
 filetype plugin indent on
@@ -21,6 +22,7 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ycm_use_ultisnips_completer=1
+let g:cssColorVimDoNotMessMyUpdatetime=1
 
 colorscheme jellybeans
 
