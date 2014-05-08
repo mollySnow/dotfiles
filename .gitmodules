@@ -1,0 +1,3 @@
+[submodule "vim-scripts/a.vim"]
+    path=vim/bundle/a.vim
+    url=git://github.cim/vim-scripts/a.vim
