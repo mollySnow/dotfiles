@@ -42,6 +42,8 @@ set smartcase
 set nohlsearch
 set incsearch
 set ruler
+set nobackup
+set nowritebackup
 
 inoremap jj <Esc>
 
