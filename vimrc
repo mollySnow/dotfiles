@@ -3,12 +3,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-Plugin 'Shougo/unite.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/a.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'nanotech/jellybeans.vim'
@@ -46,5 +46,6 @@ set nobackup
 set nowritebackup
 
 inoremap jj <Esc>
+map <C-n> :NERDTreeToggle<CR>
 
 let mapleader = ","
