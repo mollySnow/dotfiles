@@ -4,6 +4,7 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/a.vim'
 Plugin 'scrooloose/syntastic'
