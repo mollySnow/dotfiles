@@ -14,6 +14,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'ap/vim-css-color'
+Plugin 'scottmcginness/vim-jquery'
 
 call vundle#end()
 filetype plugin indent on
