@@ -1,22 +1,18 @@
 set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/')) 
 
-Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/a.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'ap/vim-css-color'
-Plugin 'scottmcginness/vim-jquery'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-call vundle#end()
+
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'ap/vim-css-color'
+
+call neobundle#end()
+
 filetype plugin indent on
 syntax on
 
