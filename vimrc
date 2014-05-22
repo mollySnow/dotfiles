@@ -5,6 +5,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
@@ -49,6 +50,8 @@ set ruler
 set nobackup
 set nowritebackup
 
+nnoremap <Space>s   :Unite -quick-match buffer<CR>
+nnoremap <Space>f   :Unite file_rec<CR>
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap jj <Esc>
