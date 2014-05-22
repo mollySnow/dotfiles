@@ -5,8 +5,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 
+NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'ap/vim-css-color'
@@ -16,11 +18,15 @@ call neobundle#end()
 filetype plugin indent on
 syntax on
 
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:ycm_use_ultisnips_completer=1
+
+"NeoComplete settings
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_min_syntax_length=3
+
 let g:cssColorVimDoNotMessMyUpdatetime=1
+let mapleader = ","
 
 colorscheme jellybeans
 
@@ -43,7 +49,11 @@ set ruler
 set nobackup
 set nowritebackup
 
-inoremap jj <Esc>
-map <C-n> :NERDTreeToggle<CR>
 
-let mapleader = ","
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap jj <Esc>
+
+autocmd FileType css            setlocal omnifunc=csscomplete#CompelteCSS
+autocmd FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
+
