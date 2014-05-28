@@ -7,12 +7,20 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/vimproc', {
+        \'build'    :{
+        \   'mac'   : 'make -f make_mac.mak'
+        \   },
+        \}
+
+NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'ap/vim-css-color'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -25,13 +33,17 @@ let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
-
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcache_enable_underbar_completion=1
 let g:cssColorVimDoNotMessMyUpdatetime=1
+
 let mapleader = ","
 
-colorscheme jellybeans
+syntax enable
+set background=dark
+colorscheme solarized 
 
-
+set laststatus=2
 set t_Co=256
 set showcmd
 set autoindent
@@ -50,6 +62,7 @@ set ruler
 set nobackup
 set nowritebackup
 
+nnoremap <Space>d   :Unite grep:.<CR>
 nnoremap <Space>s   :Unite -quick-match buffer<CR>
 nnoremap <Space>f   :Unite file_rec<CR>
 
