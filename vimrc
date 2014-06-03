@@ -19,13 +19,13 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'ap/vim-css-color'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
 filetype plugin indent on
-syntax on
 
 
 "NeoComplete settings
