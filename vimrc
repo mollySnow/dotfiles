@@ -49,6 +49,7 @@ set showcmd
 set autoindent
 set expandtab
 set smarttab
+set guifont=Inconsolata:h18
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -65,6 +66,7 @@ set nowritebackup
 nnoremap <Space>d   :Unite grep:.<CR>
 nnoremap <Space>s   :Unite -quick-match buffer<CR>
 nnoremap <Space>f   :Unite file_rec<CR>
+
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap jj <Esc>
