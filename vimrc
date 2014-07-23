@@ -1,17 +1,26 @@
 set nocompatible
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/')) 
+if has('win32')
+    set runtimepath+=$VIM/vimfiles/bundle/neobundle.vim/
+    call neobundle#begin(expand('$VIM/vimfiles/bundle/')) 
+else
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    call neobundle#begin(expand('~/.vim/bundle/')) 
+endif
+
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache.vim'
-NeoBundle 'Shougo/vimproc', {
-        \'build'    :{
-        \   'mac'   : 'make -f make_mac.mak'
-        \   },
-        \}
+if !has('win32')
+	NeoBundle 'Shougo/vimproc', {
+        	\'build'    :{
+        	\   'mac'   : 'make -f make_mac.mak',
+		\   'windows' : 'tools\\update-dll-mingw'
+        	\   },
+        	\}
+endif
 
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-surround'
