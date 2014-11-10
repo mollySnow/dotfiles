@@ -62,16 +62,19 @@ set incsearch
 set ruler
 set nobackup
 set nowritebackup
+set guioptions-=r "remove scrollbar
+
+vnoremap < <gv
+vnoremap > >gv
 
 nnoremap <Space>d   :Unite grep:.<CR>
 nnoremap <Space>s   :Unite -quick-match buffer<CR>
 nnoremap <Space>f   :Unite file_rec<CR>
 
-
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap jj <Esc>
 
-autocmd FileType css            setlocal omnifunc=csscomplete#CompelteCSS
+autocmd FileType css            setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
 
