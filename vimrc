@@ -12,6 +12,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+
 NeoBundle 'Shougo/neocomplcache.vim'
 if !has('win32')
 	NeoBundle 'Shougo/vimproc', {
@@ -31,6 +34,12 @@ NeoBundle 'ap/vim-css-color'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'klen/python-mode.git'
+NeoBundle 'vim-scripts/TeX-PDF'
+NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'junegunn/goyo.vim'
+NeoBundle 'junegunn/limelight.vim'
+
 
 call neobundle#end()
 
@@ -46,7 +55,7 @@ let g:neocomplcache_enable_camel_case_completion=1
 let g:neocomplcache_enable_underbar_completion=1
 let g:cssColorVimDoNotMessMyUpdatetime=1
 
-let mapleader = ","
+let mapleader = " "
 
 syntax enable
 set background=dark
@@ -54,11 +63,12 @@ colorscheme solarized
 
 set laststatus=2
 set t_Co=256
+set lines=32 columns=84
 set showcmd
 set autoindent
 set expandtab
 set smarttab
-set guifont=Inconsolata:h18
+set guifont=Inconsolata:h14
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -69,9 +79,13 @@ set smartcase
 set nohlsearch
 set incsearch
 set ruler
+set guioptions-=r "remove scrollbar
+
 set nobackup
 set nowritebackup
-set guioptions-=r "remove scrollbar
+set noswapfile
+
+setlocal spell spelllang=sv
 
 vnoremap < <gv
 vnoremap > >gv
@@ -87,3 +101,20 @@ autocmd FileType css            setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown  setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript     setlocal omnifunc=javascriptcomplete#CompleteJS
 
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
