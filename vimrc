@@ -68,7 +68,7 @@ set showcmd
 set autoindent
 set expandtab
 set smarttab
-set guifont=Inconsolata:h14
+"set guifont=Inconsolata:h14
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -85,7 +85,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-setlocal spell spelllang=sv
+"setlocal spell spelllang=sv
 
 vnoremap < <gv
 vnoremap > >gv
