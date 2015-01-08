@@ -2,7 +2,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="Xresources vimrc bash_aliases jshintrc"
+files="Xresources vimrc bash_aliases jshintrc i3"
 
 #### Backup old dotfiles
 
