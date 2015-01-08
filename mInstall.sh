@@ -2,7 +2,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="vimrc vim bash_aliases jshintrc"
+files="vimrc bash_aliases jshintrc"
 
 #### Backup old dotfiles
 
