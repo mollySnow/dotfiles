@@ -11,7 +11,11 @@
 
 # exec setxkbmap se # Set keyboard layout to swedish.
 
-set $mod Mod4
+set $mod  Mod4
+set $mod2 Mod1
+
+bindsym $mod+$mod2+s exec setxkbmap se
+bindsym $mod+$mod2+e exec setxkbmap us
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
