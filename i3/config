@@ -164,42 +164,39 @@ set $S_cyan     #2aa198
 set $S_green    #859900
 
 # dark mode 
-set $S_base7    #002b36
-set $S_base6    #073642
+set $S_dark1    #002b36
+set $S_dark2    #073642
 set $S_base5    #586e75
 set $S_base4    #657b83
 set $S_base0    #839496
 set $S_base1    #93a1a1
-set $S_base2    #eee8d5
-set $S_base3    #fdf6e3
+set $S_lght1    #eee8d5
+set $S_lght2    #fdf6e3
 
 # class                 border     backgr.    text       indicator
-client.focused 		    $S_base7   $S_base6   $S_base1   $S_green
-client.focused_inactive $S_base6   $S_base7   $S_base4   $S_green
-client.unfocused        $S_base6   $S_base7   $S_base4   $S_green
-client.urgent           $S_base6   $S_base7   $S_base4   $S_green
-client.background       $S_base6   $S_base7   $S_base7   $S_green
+client.focused 		    $S_dark1   $S_dark2   $S_blue    $S_yello
+client.focused_inactive $S_dark2   $S_dark1   $S_orang   $S_green
+client.unfocused        $S_dark2   $S_dark1   $S_base4   $S_green
+client.urgent           $S_dark2   $S_dark1   $S_base4   $S_green
+client.background       $S_dark2   $S_dark1   $S_dark1   $S_green
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     colors {
         # bar colors
-        background $S_base7
-        statusline $S_base3
-        separator  $S_base6
+        background $S_dark1
+        statusline $S_base4
+        separator  $S_dark1
 
         # workspace icons   border      background  font
-        focused_workspace   $S_base7    $S_base6    $S_base1
-        active_workspace    $S_base6    $S_base7    $S_base1
-        inactive_workspace  $S_base6    $S_base7    $S_base1
-        urgent_workspace    $S_base6    $S_base7    $S_base1
+        focused_workspace   $S_dark1    $S_dark2    $S_blue
+        active_workspace    $S_dark2    $S_dark1    $S_orang
+        inactive_workspace  $S_dark2    $S_dark1    $S_base4
+        urgent_workspace    $S_dark2    $S_dark1    $S_orang
     }
     status_command i3status -c ~/.i3/i3status.conf
 }
-
-
-
 
 exec xsetroot -solid "e1dce0"
 
