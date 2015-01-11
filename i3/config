@@ -199,4 +199,4 @@ bar {
     # status_command i3status -c ~/.i3/i3status.conf
 }
 
-exec xsetroot -solid "#e1dce0"
+exec xsetroot -solid "#002b36"
