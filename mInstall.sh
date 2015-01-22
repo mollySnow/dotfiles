@@ -2,7 +2,11 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="xinitrc Xresources vimrc bash_aliases jshintrc i3 i3status.conf"
+if [[ $OSTYPE == 'darwin'* ]]; then
+    files="vimrc bash_aliases jshintrc"
+elif [[ $OSTYPE == 'linux-gnu' ]]; then
+    files="xinitrc Xresources vimrc bash_aliases jshintrc i3 i3status.conf"
+fi
 
 #### Backup old dotfiles
 
