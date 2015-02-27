@@ -1,4 +1,6 @@
 set nocompatible
+set ttyfast
+
 if has('win32')
     set runtimepath+=$VIM/vimfiles/bundle/neobundle.vim/
     call neobundle#begin(expand('$VIM/vimfiles/bundle/')) 
@@ -20,7 +22,7 @@ if !has('win32')
 	NeoBundle 'Shougo/vimproc', {
         	\'build'    :{
         	\   'mac'   : 'make -f make_mac.mak',
-		\   'windows' : 'tools\\update-dll-mingw'
+		    \   'windows' : 'tools\\update-dll-mingw',
         	\   },
         	\}
 endif
@@ -39,6 +41,7 @@ NeoBundle 'vim-scripts/TeX-PDF'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'junegunn/limelight.vim'
+NeoBundle 'chriskempson/base16-vim'
 
 
 call neobundle#end()
@@ -58,11 +61,13 @@ let g:cssColorVimDoNotMessMyUpdatetime=1
 let mapleader = " "
 
 syntax enable
+set term=xterm-256color
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized 
 
 set laststatus=2
-set t_Co=256
 set lines=32 columns=84
 set showcmd
 set autoindent
@@ -84,11 +89,22 @@ set guioptions-=r "remove scrollbar
 set nobackup
 set nowritebackup
 set noswapfile
+set encoding=utf-8
 
 "setlocal spell spelllang=sv
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
 vnoremap < <gv
 vnoremap > >gv
+
+vmap <Enter>    <Plug>(EasyAlign)
+nmap ga         <Plug>(EasyAlign)
 
 nnoremap <Space>d   :Unite grep:.<CR>
 nnoremap <Space>s   :Unite -quick-match buffer<CR>

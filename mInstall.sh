@@ -3,9 +3,9 @@
 dir=~/dotfiles
 olddir=~/dotfiles_old
 if [[ $OSTYPE == 'darwin'* ]]; then
-    files="vimrc bash_aliases jshintrc"
+    files="vimrc bash_aliases jshintrc tmux.conf"
 elif [[ $OSTYPE == 'linux-gnu' ]]; then
-    files="xinitrc Xresources vimrc bash_aliases jshintrc i3 i3status.conf"
+    files="xinitrc Xresources vimrc bash_aliases tmux.conf jshintrc i3 i3status.conf"
 fi
 
 #### Backup old dotfiles
