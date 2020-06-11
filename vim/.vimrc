@@ -4,7 +4,19 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
 " TODO: Load plugins here (pathogen or vundle)
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'SirVer/ultisnips'
+call plug#end()
 
 " Turn on syntax highlighting
 syntax on
@@ -19,7 +31,7 @@ filetype plugin indent on
 set modelines=0
 
 " Show line numbers
-set number
+set number relativenumber
 
 " Show file stats
 set ruler
