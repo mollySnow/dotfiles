@@ -11,12 +11,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
-" TODO: Load plugins here (pathogen or vundle)
 call plug#begin('~/.vim/plugged')
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Turn on syntax highlighting
@@ -25,8 +26,10 @@ syntax on
 " For plugins to load correctly
 filetype plugin indent on
 
-" TODO: Pick a leader key
-" let mapleader = ","
+" Edit vimr configuration file
+nnoremap <SPACE> <Nop>
+let mapleader = " " 
+
 
 " Security
 set modelines=0
@@ -101,9 +104,22 @@ set listchars=tab:▸\ ,eol:¬
 " Uncomment this to enable by default:
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EOL
+map <leader>l :set list!<CR> 
+" Toggle tabs and EOL
 
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
 colorscheme gruvbox
+" Vimrc edit/reload
+nnoremap <Leader>ve :e $MYVIMRC<CR>
+nnoremap <Leader>vr :source $MYVIMRC<CR>
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+" OmniSharp settings
+let g:OmniSharp_server_stdio = 1
+" CoC settings
+let g:coc_global_extensions=['coc-omnisharp']
+
