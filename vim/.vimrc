@@ -12,8 +12,8 @@ endif
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
